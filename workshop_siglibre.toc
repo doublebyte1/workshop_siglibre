@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Getting the Tweets Coordinates}{21}{0}{2}
+\beamer@sectionintoc {3}{Importing the Tweets into QGIS}{40}{0}{3}
+\beamer@sectionintoc {4}{Creating an Heatmap}{59}{0}{4}
+\beamer@sectionintoc {5}{Creating Clusters}{65}{0}{5}
+\beamer@sectionintoc {6}{3D Viz}{67}{0}{6}

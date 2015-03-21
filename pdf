@@ -1,4 +1,4 @@
-pdflatex geostack
-pdflatex geostack
-okular geostack.pdf
+pdflatex workshop_siglibre
+pdflatex workshop_siglibre
+okular workshop_siglibre.pdf
 

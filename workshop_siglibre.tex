@@ -1,0 +1,406 @@
+\documentclass[hyperref={pdfpagelabels=true}]{beamer}
+
+\usepackage{lmodern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+%
+%You are free to:
+%
+%    Share — copy and redistribute the material in any medium or format
+%    Adapt — remix, transform, and build upon the material
+%    for any purpose, even commercially.
+%
+%    The licensor cannot revoke these freedoms as long as you follow the license terms.
+%
+%Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+%
+%ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original. 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{dred}{rgb}{0.647059, 0.164706, 0.164706}
+\definecolor{dgreen}{rgb}{0., 0.545098, 0.545098}
+\usecolortheme[named=dgreen]{structure}
+
+\title{Analysing GeoLocated Data from Social Media}
+\subtitle{with QGIS}
+\author{Joana Sim\~{o}es} 
+
+\author[shortname]{Joana Sim\~{o}es \inst{1}}
+\institute[shortinst]{\inst{1} Bdigital, CASA, CICS.NOVA}
+
+%\date{\today} 
+%\titlegraphic{\includegraphics[width=.35\textwidth]{bigdata2.png}}
+ 
+\usepackage{beamerthemeshadow}
+%\usepackage{beamerthemesplit}
+\usepackage{listings}
+
+\newcommand{\soooo}{H$_2$SO$_4$}
+
+%fdl stuff
+\usepackage{hyperref}
+\hypersetup{colorlinks, 
+           citecolor=black,
+           filecolor=black,
+           linkcolor=black,
+           urlcolor=black,
+           bookmarksopen=true,
+           pdftex}
+
+\hfuzz = .6pt % avoid black boxes
+
+\lstset{language=SQL}
+
+\begin{document}
+\setbeamertemplate{footline}[page number]
+\setbeamertemplate{navigation symbols}{}
+\begin{frame}
+\titlepage
+
+%\begin{titlepage}
+%\centering{ 
+%  \includegraphics[scale=0.2]{bigdata2.png}
+%  \includegraphics[scale=0.2]{bigdata1.png}  
+%}
+%\end{titlepage}
+
+\end{frame} 
+  
+ 
+\begin{frame}
+\frametitle{Table of Contents}
+%\tiny{
+\tableofcontents%}
+\end{frame}
+
+\section{Introduction} 
+\begin{frame}
+\frametitle{What do we want to do?}
+
+\begin{itemize}
+  \item<1->Nowadays social media is a major source for information sharing.In some cases the user also shares some attributes, such as \textbf{geolocation}. By using this information as a proxy for human presence, and with the adequate methods, we are able to provide powerful representations of the distribution of social media users within the territory.
+  \item<2->Due to its willingness in sharing data, Twitter has been a prime \textit{playground}, for researchers and practitioners around the world.
+  \item<3->The objective of this workshop is to provide a workflow for enhancing the visualization of geolocated Tweets.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{How are we going to do it?}
+
+\begin{itemize}
+  \item<2->Pull data stored in a NoSQL database.
+  \item<3->Create an Heatmap expressing Tweet density.
+  \item<4->Produce clusters from the heatmap.
+  \item<5->Produce a 3D visualization, on a webpage.  
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Objective}
+
+%show image in the beginning and image in the end
+\end{frame}
+
+\begin{frame}
+\frametitle{Stack}
+\begin{itemize}
+  \item MongoDB
+  \item QGIS + Python Plugins
+  \begin{itemize}
+    \item<2-> Heatmap
+    \item<3-> OpenLayers
+    \item<4-> Qgis2threejs    
+  \end{itemize}    
+\end{itemize}
+
+%put images
+\end{frame}
+
+\begin{frame}
+\frametitle{Approach}
+This will be a hands-on workshop.
+\begin{itemize}
+  \item<2-> I will introduce each one of the micro-tasks, and will do it while you watch.
+  \item<3-> Then I will provide help to everyone who needs it to complete the task.
+  \item<4-> \textbf{For the impatient:} If you don't want to wait for everyone to complete, you can attempt to complet the exercises on your own ;-) View the complete presentation here: %todo:link
+  \item<5-> \textbf{For the guru:} If you have finished everything and are bored, you may try to complete the tutorials or read the references, on the last page;-)
+\end{itemize}
+\end{frame}
+
+\section{Getting the Tweets Coordinates} 
+\begin{frame}
+\frametitle{Twitter Data}
+
+\begin{columns}
+  \begin{column}{0.5\textwidth}\small{ 
+    \begin{itemize}
+      \item<1->Users on Twitter generate over 400 million tweets everyday.
+      \item<1->A proportion of these tweets is available to researchers and practitioners through public APIs, free of any charges.
+      \item<2->Approximately 1\% of all Tweets published on Twitter are geolocated.%Users can optionally choose to provide location information for the Tweets they publish. gps
+      \end{itemize}  }
+  \end{column}
+  \begin{column}{0.5\textwidth}
+      \begin{figure}  
+	\includegraphics[width=\textwidth]{love.jpg}\\
+       \end{figure}  
+    \tiny{Why we love Twitter}  
+  \end{column}  
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Twitter APIs}
+
+\begin{itemize}
+  \item<2->REST APIs. %use pull strategy for data retrieval.To collect information a user must explicitly request it
+  \item<3->StreamAPIs. %provides a continuous stream of public information from Twitter. These APIs use the push strategy for data retrieval.
+  \begin{itemize}  
+    \item<4->User streams. %These are single-user streams, with to all the Tweets of auser
+    \item<5->Site streams. % These are multi-user streams and intended for applicationswhich access Tweets from multiple users
+    \item<6->Public Streams. %These are streams containing the public tweets on Twitter    
+  \end{itemize}  
+  \item<7->These APIs are accessed only via authenticated requests (OAuth).% each request must be signed with valid Twitter user credentials  
+  \item<8->Access to APIs is also limited to a specific number of requests within a time window (rate limit). %apply to user and app. 15 mining
+  \item<9->Responses from Twitter are in JSON format.
+\end{itemize}  
+
+\end{frame}
+
+\begin{frame}
+\frametitle{JSON in a Nutshell}
+
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+    \includegraphics[width=0.5\textwidth]{json2.jpg}  
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{json.png}    
+  \end{column}  
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Mongo loves JSON}
+\begin{itemize}
+  \item<1->NoSQL Database.
+  \item<1->Document-Oriented Storage.%MongoDB stores its data in JSON-style objects. This makes it very easy to store raw documents from Twitter’s APIs
+\end{itemize}
+    \begin{figure}  
+      \includegraphics[width=0.5\textwidth]{mongo.png}  
+    \end{figure}  
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Hands-on}
+\begin{itemize}
+  \item<1->Objective: Connect to the tweets database and view one record.
+  \item<2->Tool: Mongodb command line client.
+  \item<2->Database properties:
+  \begin{itemize}  
+    \item<2->host: 54.72.72.228 (on aws).
+    \item<2->database: tweets\_workshop
+    \item<2->username: workshop
+    \item<2->password: geohipster
+    \item<2->collection: tweets    
+  \end{itemize}  
+  \item<2->Reference: \url{http://docs.mongodb.org/manual/\#}.
+  \item<3-> \textit{mongo --host 54.72.72.228 tweets\_workshop -u workshop -p geohipster}
+  \item<3->\textit{db.tweets.find().limit( 1 )}  
+\end{itemize}  
+\end{frame}
+
+\begin{frame}
+\frametitle{Hands-on (cont.)}
+\begin{itemize}
+  \item<1->Objective: Export tweets coordinates into a csv file.
+  \item<2->Take notice of the long, lat fields.
+  \item<2->Exit the client.  
+  \item<2->Use mongoexport to write the values on a text file.    
+  \item<2->Reference: \url{http://docs.mongodb.org/manual/core/import-export/}.
+  \item<3->\textit{ mongoexport --host  54.72.72.228 -u workshop -p geohipster --db tweets\_workshop --collection tweets --csv --out out\_tweets.csv --fields geoLocation.longitude,geoLocation.latitude --query  '{geoLocation: {\$ne: null}}'}
+  \item<3->View the exported file:e.g.: \textit{cat /tmp/out/out\_tweets.csv}  
+\end{itemize}  
+\end{frame}
+
+\section{Importing the Tweets into QGIS} 
+\begin{frame}
+\frametitle{QGIS}
+QGIS is a Free and Open-Source GIS System:
+    \begin{itemize}
+      \item<2->Cross-platform (Windows, Mac, Linux and Android).
+      \item<3->Easy to use.
+      \item<4->Great community support.
+      \item<5->Latest version has been translated into 46 languages.
+      \end{itemize}
+      
+    \begin{figure}  
+      \includegraphics[width=\textwidth]{qgis.png}\\
+      \end{figure}  
+       
+\end{frame}
+
+\begin{frame}
+\frametitle{Bug Affecting the Heatmap Plugin}
+      
+  \begin{figure}  
+    \includegraphics[width=\textwidth]{bug.png}\\
+    \end{figure}  
+       
+\end{frame}
+
+\begin{frame}
+\frametitle{There is a Plugin for Everything}
+
+\begin{itemize}
+  \item<1->The core of QGIS is extended through user-submited Python plugins.
+  \item<3->Plugins can be easily installed through the plugin manager.%there are plugins forinput, output,processing, etc
+  \item<4->In this workshop we will use three plugins (one is already installed).
+\end{itemize}
+      
+  \begin{figure}  
+    \includegraphics[width=0.6\textwidth]{plugins.png}\\
+    \end{figure}         
+\end{frame}
+
+\begin{frame}
+\frametitle{Isn't there a Plugin to connect to MongoDB?}
+\begin{itemize}
+  \item<1->There was a plugin written in 2011.
+  \item<3->There seemed to be some issues with it, and sadly it hasn't be ported to the latest versions of QGIS.
+  \item<4->The project appears to be now dead.
+  \item<5->The community would really welcome a new attempt for a mongoDB connector on QGIS.  
+\end{itemize}      
+  \begin{figure}  
+      \includegraphics[width=0.6\textwidth]{mongodbplugin.png}\\
+    \end{figure}         
+\end{frame}
+
+\begin{frame}
+\frametitle{Hands-on}
+\begin{itemize}
+  \item<1->Objective: Display the tweets coordinates in QGIS, with background map.
+  \item<1->Tool: QGIS + OpenLayers plugin.
+  \item<1->Steps:  
+  \begin{itemize}
+    \item<2->Start QGIS and create a project.  
+    \item<2->Download and enable the \textit{OpenLayers} plugin (Plugins $->$ Manage and Install Plugins).
+    \item<2->Choose a background map (e.g.: OSM, Bing Maps, etc).
+    \item<2->Import the json file, using the Text Layer Importer (Layer $->$ Add Layer $->$ Add Delimited Text Layer).    
+  \end{itemize}    
+\end{itemize}  
+
+  \begin{figure}  
+      \includegraphics[width=0.4\textwidth]{import.png}\\
+    \end{figure}         
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hands-on (cont.)}
+\begin{itemize}
+  \item<1->Objective: Save the tweets from the region of Catalunya, in a Shapefile.
+  \item<1->Steps:  
+  \begin{itemize}
+    \item<2->Zoom into the desired location using the zoom tool (View $->$ Zoom in) .  
+    \item<2->Select the visible points using the select tool.
+    \item<2->Save the selected features in a Shapefile.
+    \begin{itemize}
+      \item<2->Pay attention to the crs.
+      \item<2->Make sure you save \textbf{only} the selected features.      
+    \end{itemize}    
+  \end{itemize}    
+\end{itemize}  
+
+  \begin{figure}  
+      \includegraphics[width=0.6\textwidth]{sel_tweets.png}\\
+    \end{figure}         
+\end{frame}
+
+\section{Creating an Heatmap} 
+\begin{frame}
+\frametitle{Heatmaps}
+QGIS is a Free and Open-Source GIS System:
+    \begin{itemize}
+      \item<2->Cross-platform (Windows, Mac, Linux and Android).
+      \item<3->Easy to use.
+      \item<4->Great community support.
+      \item<5->Latest version has been translated into 46 languages.
+      \end{itemize}
+      
+    \begin{figure}  
+      \includegraphics[width=\textwidth]{qgis.png}\\
+      \end{figure}  
+       
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Hands-on}
+
+
+\end{frame}
+
+\section{Creating Clusters} 
+\begin{frame}
+\frametitle{TODO}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hands-on}
+
+
+\end{frame}
+
+\section{3D Viz} 
+\begin{frame}
+\frametitle{TODO}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Hands-on}
+
+
+\end{frame}
+
+%TODO: introduce Mongo - how does the data arrive to mongo explain what we want to do; do
+%TODO: introduce QGIS - 
+%explain import do
+   %import csv
+   %save as shapefile - reproject
+   %save only selected features
+
+% explain heatmap;do
+% explain clusters; do
+%explain thre3djs; do
+
+
+
+
+\begin{frame}
+\frametitle{References}
+\begin{itemize}
+\item Aji, A., Wang, F., Vo, H., Lee, R., Liu, Q., Zhang, X. and Saltz, J." Hadoop-GIS: A High Performance Spatial Data Warehousing System over MapReduce". Proceedings of the VLDB Endowment International Conference on Very Large Data Bases, 6(11), p1009. (2013)
+\item Cuesta, H. "Practical Data Analysis". Packt Publishing (2013)
+\item Dunning, T. and Friedman, E. "Time Series Databases: New Ways to Store and Access Data". O'Reilly Media; 1 edition (October, 2014)
+\item Myatt, G and Johnson, W. "Making Sense Of Data I: A Practical Guide to Exploratory Data Analysis and Data Mining". O'Reilly : 2 edition (2014).
+%http://tweettracker.fulton.asu.edu/tda/TwitterDataAnalytics.pdf
+%http://www2.qgis.org
+%QGIS plugin repository
+%http://geokoder.com/mongodb-plugin-for-quantum-gis
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tutorials}
+\end{frame}
+
+\end{document}
