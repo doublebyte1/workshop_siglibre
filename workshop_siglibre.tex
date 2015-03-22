@@ -395,42 +395,101 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
 
 \section{Creating Clusters} 
 \begin{frame}
-\frametitle{Clusters}
-
-
+\frametitle{Clustering}
+\small{ 
+    \begin{itemize}
+      \item<1->It is a descriptive data mining technique, often used for dimensionality reduction.
+      \item<2->It corresponds to a family of unsupervised machine learning algorithms.      
+      \item<3->It groups a set of objects in such a way that objects in the same group are more similar to each other, than to object in other groups.
+      \item<4->Density based clusters are separated from each other by contiguous regions of low density of objects.
+    \end{itemize}    
+}
+  \begin{figure}  
+      \includegraphics[width=0.4\textwidth]{screenshot1.png}\\
+    \end{figure}         
+    
 \end{frame}
 
 \begin{frame}
+\frametitle{Clustering (cont.)}
+
+    \begin{itemize}
+      \item<1->In June 2014, it was released (the first?) QGIS plugin for \textit{spatially constrained clustering}: clusterpy.
+      \begin{itemize}
+	\item<1->\url{https://plugins.qgis.org/plugins/clusterpy\_qgis\_plugin/}
+      \end{itemize}          
+      \item<1->In this workshop we will use an alternative method to define areas with high density.
+      \begin{itemize}
+	\item<1->\url{http://www.qgistutorials.com/en/docs/creating_heatmaps.html}
+      \end{itemize}          
+    \end{itemize}    
+
+    
+\end{frame}
+
+
+\begin{frame}
 \frametitle{Hands-on}
+\begin{itemize}
+  \item<1->Objective: Detect areas with higher density of tweets.
+  \item<1->Tool: QGIS.
+  \item<1->Steps:  
+  \begin{itemize}
+    \item<2->Use the identify tool to establish a treshold: from that value on, pixels will be considered part of an high-density cluster.  
+    \item<2->Use the raster calculator, to select pixels above that threshold (Raster $->$ Raster Calculator).
+    \item<2->Example of a select expression:$"heatmap@1">150$    
+    \item<3->The new map only contains binary values (1: above the threshold; 0: bellow the threshold).
+    \item<3->Tip:ensure the legend picks up correctly the values on the dataset.
+  \end{itemize}    
+\end{itemize}  
+\end{frame}
 
-
+\begin{frame}
+\frametitle{Hands-on (cont.)}
+%\begin{itemize}
+  \begin{itemize}
+    \item<1->Vectorize this raster file (Raster $->$ Conversion $->$ Polygonize (Raster to Vector).  
+    \item<2->Check out the attribute table of the Shapefile: the polygons have a value of 0, or 1 (right click + Open attribute table).
+    \item<3->If we filter out the polygons with value 0, we will have the areas with high density. 
+      \begin{itemize}
+	\item<4->Select by expression: $"DN" = 1$. 
+      \end{itemize}    
+    \item<5->Save the selection as a new Shapefile.
+    \item<6->Enhancement: count the number of tweets inside each polygon (Vector $->$  Analysis Tools $->$ Count Points in Polygon).    
+  \end{itemize}    
+%\end{itemize}  
 \end{frame}
 
 \section{3D Viz} 
 \begin{frame}
 \frametitle{TODO}
-
+%TODO: 3djs OpenGL and the plugin
 
 \end{frame}
 
 \begin{frame}
 \frametitle{Hands-on}
-
-
+\begin{itemize}
+  \item<1->Objective: create webpage with 3d visualization of the clusters.
+  \item<1->Tool: QGIS + Qgis2threejs plugin.
+  \item<1->Steps:  
+  \begin{itemize}
+    \item<2->Ensure that Qgis2threejs is installed and enabled.  
+    \item<3->Prepare the scene you want to render (e.g.: visible layers, styles, etc).
+    \item<4->Run Qgis2threejs (Web $->$ Qgis2threejs $->$ Qgis2threejs)
+    \item<5->Costumize the visualization. Some things to pay attention to:
+      \begin{itemize}
+	\item<6->Enable the layers you want to extrude (in this case, the clusters).      
+	\item<6->The height value should be read fromthe count field (PNTCNT).	
+	\item<6->You may want to exagerate the vertical scale by a factor.
+	\item<6->The output HTML file path defines where you will save the result webpage (and associated files).	
+      \end{itemize}    
+    %\item<5->When you're ready, press the "run" button and wait for the visualization to come up.
+  \end{itemize}    
+\end{itemize}  
 \end{frame}
 
-%TODO: introduce Mongo - how does the data arrive to mongo explain what we want to do; do
-%TODO: introduce QGIS - 
-%explain import do
-   %import csv
-   %save as shapefile - reproject
-   %save only selected features
-
-% explain heatmap;do
-% explain clusters; do
-%explain thre3djs; do
-
-
+%TODO: 3dviz intro, references + tutorials, fix _ character, fix images, review everything
 
 
 \begin{frame}
@@ -448,6 +507,9 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
 %https://alastaira.wordpress.com/2011/02/23/heat-mapping-crime-data-with-bing-maps-and-html5-canvas/
 %http://docs.qgis.org/2.0/en/docs/user_manual/plugins/plugins_heatmap.html
 %http://en.wikipedia.org/wiki/Kernel_%28statistics%29#Kernel_functions_in_common_use
+%http://en.wikipedia.org/wiki/Cluster_analysis
+%https://plugins.qgis.org/plugins/clusterpy_qgis_plugin/
+%http://www.rise-group.org/section/Software/clusterPy/
 
 \end{itemize}
 \end{frame}

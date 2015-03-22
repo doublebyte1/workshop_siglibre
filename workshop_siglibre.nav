@@ -60,23 +60,27 @@
 \headcommand {\sectionentry {5}{Creating Clusters}{71}{Creating Clusters}{0}}
 \headcommand {\beamer@sectionpages {59}{70}}
 \headcommand {\beamer@subsectionpages {59}{70}}
-\headcommand {\slideentry {5}{0}{24}{71/71}{}{0}}
-\headcommand {\beamer@framepages {71}{71}}
-\headcommand {\slideentry {5}{0}{25}{72/72}{}{0}}
-\headcommand {\beamer@framepages {72}{72}}
-\headcommand {\sectionentry {6}{3D Viz}{73}{3D Viz}{0}}
-\headcommand {\beamer@sectionpages {71}{72}}
-\headcommand {\beamer@subsectionpages {71}{72}}
-\headcommand {\slideentry {6}{0}{26}{73/73}{}{0}}
-\headcommand {\beamer@framepages {73}{73}}
-\headcommand {\slideentry {6}{0}{27}{74/74}{}{0}}
-\headcommand {\beamer@framepages {74}{74}}
-\headcommand {\slideentry {6}{0}{28}{75/75}{}{0}}
+\headcommand {\slideentry {5}{0}{24}{71/74}{}{0}}
+\headcommand {\beamer@framepages {71}{74}}
+\headcommand {\slideentry {5}{0}{25}{75/75}{}{0}}
 \headcommand {\beamer@framepages {75}{75}}
-\headcommand {\slideentry {6}{0}{29}{76/76}{}{0}}
-\headcommand {\beamer@framepages {76}{76}}
-\headcommand {\beamer@partpages {1}{76}}
-\headcommand {\beamer@subsectionpages {73}{76}}
-\headcommand {\beamer@sectionpages {73}{76}}
-\headcommand {\beamer@documentpages {76}}
-\headcommand {\def \inserttotalframenumber {29}}
+\headcommand {\slideentry {5}{0}{26}{76/78}{}{0}}
+\headcommand {\beamer@framepages {76}{78}}
+\headcommand {\slideentry {5}{0}{27}{79/84}{}{0}}
+\headcommand {\beamer@framepages {79}{84}}
+\headcommand {\sectionentry {6}{3D Viz}{85}{3D Viz}{0}}
+\headcommand {\beamer@sectionpages {71}{84}}
+\headcommand {\beamer@subsectionpages {71}{84}}
+\headcommand {\slideentry {6}{0}{28}{85/85}{}{0}}
+\headcommand {\beamer@framepages {85}{85}}
+\headcommand {\slideentry {6}{0}{29}{86/91}{}{0}}
+\headcommand {\beamer@framepages {86}{91}}
+\headcommand {\slideentry {6}{0}{30}{92/92}{}{0}}
+\headcommand {\beamer@framepages {92}{92}}
+\headcommand {\slideentry {6}{0}{31}{93/93}{}{0}}
+\headcommand {\beamer@framepages {93}{93}}
+\headcommand {\beamer@partpages {1}{93}}
+\headcommand {\beamer@subsectionpages {85}{93}}
+\headcommand {\beamer@sectionpages {85}{93}}
+\headcommand {\beamer@documentpages {93}}
+\headcommand {\def \inserttotalframenumber {31}}
