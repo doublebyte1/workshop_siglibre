@@ -55,14 +55,16 @@
 \setbeamertemplate{footline}[page number]
 \setbeamertemplate{navigation symbols}{}
 \begin{frame}
-\titlepage
+%\titlepage
 
-%\begin{titlepage}
-%\centering{ 
-%  \includegraphics[scale=0.2]{bigdata2.png}
-%  \includegraphics[scale=0.2]{bigdata1.png}  
-%}
-%\end{titlepage}
+\begin{titlepage}
+\centering{ 
+  \includegraphics[height=50px]{raw_data.png}    
+  \includegraphics[height=50px]{cover3.png}  
+  \includegraphics[height=50px]{cover2.png}    
+  \includegraphics[height=50px]{cover1.png}  
+}
+\end{titlepage}
 
 \end{frame} 
   
@@ -323,30 +325,77 @@ QGIS is a Free and Open-Source GIS System:
 \section{Creating an Heatmap} 
 \begin{frame}
 \frametitle{Heatmaps}
-QGIS is a Free and Open-Source GIS System:
+
+Heatmaps enhance the visualization of the density distribution of a phenomena (e.g.: crime, accidents, tweets).
+\begin{columns}
+  \begin{column}{0.5\textwidth}
     \begin{itemize}
-      \item<2->Cross-platform (Windows, Mac, Linux and Android).
-      \item<3->Easy to use.
-      \item<4->Great community support.
-      \item<5->Latest version has been translated into 46 languages.
-      \end{itemize}
-      
-    \begin{figure}  
-      \includegraphics[width=\textwidth]{qgis.png}\\
-      \end{figure}  
-       
+	  \item<2->The "heat" in the term refers to the concentration of the geographic entity within any given spot.
+	  \item<3->Sometimes they are referred as hot spot mapping or clustering.
+	  \item<4->They are great tools to detect spatial patterns.
+    \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \includegraphics[width=\textwidth]{heatmap_crime.png}    
+  \end{column}  
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Heatmaps (cont.)}
+
+\begin{itemize}
+      \item<1->Creating heatmaps involves interpolating discrete points to create a continuous surface known as a \textbf{density surface}. 
+      \item<2->There are three key parameters involved in this calculation:
+  \begin{itemize}
+	\item<3->Cell size of the output raster file.%resolution: a small cell size will result in a smoother surface, but it will result in a larger file.
+	\item<3->Bandwidth or search radius.% the area around each cell the GIS software will factor into the density calculation. too small will pick up only local patterns, and too large will generalize too much.
+	\item<3->Interpolation algorithm.%anything from count features within a search radius to IDW, 
+	
+  \end{itemize}
+\end{itemize}
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Hands-on}
+\begin{itemize}
+  \item<1->Objective: Create heatmap depicting tweet density.
+  \item<1->Tool: QGIS + Heatmap plugin.
+  \item<1->Steps:  
+  \begin{itemize}
+    \item<2->Ensure the heatmap plugin is enabled.  
+    \item<2->Create the heatmap using the plugin (Raster $->$ Heatmap).
+    \item<2->Pay special attention to the following parameters:    
+    \begin{itemize}
+      \item<3->Radius: search radius in meters.
+      \item<3->Rows and columns: cell size of the output raster.
+      \item<3->Rows and columns: cell size of the output raster.
+      \item<3->Kernel shape: QGIS uses one of the following decay algorithms.      
+    \end{itemize}        
+    \item<4->Costumize a color scheme, by right clicking the layer and choosing properties.
+  \end{itemize}    
+\end{itemize}  
+\end{frame}
 
+\begin{frame}
+\frametitle{Hands-on (cont.)}
+%pictures of heatmaps
+
+\begin{itemize}  
+    \item<1->Suggestion: try different combinations of parameters and different visualizations.    
+    \item<1->Tip: Use the identify tool to ensure the maximum is being picked up.
+\end{itemize}  
+
+  \begin{figure}  
+      \includegraphics[width=\textwidth]{heatmap1.png}\\
+    \end{figure}         
 
 \end{frame}
 
 \section{Creating Clusters} 
 \begin{frame}
-\frametitle{TODO}
+\frametitle{Clusters}
 
 
 \end{frame}
@@ -395,6 +444,10 @@ QGIS is a Free and Open-Source GIS System:
 %http://www2.qgis.org
 %QGIS plugin repository
 %http://geokoder.com/mongodb-plugin-for-quantum-gis
+%http://www.gislounge.com/heat-maps-in-gis/
+%https://alastaira.wordpress.com/2011/02/23/heat-mapping-crime-data-with-bing-maps-and-html5-canvas/
+%http://docs.qgis.org/2.0/en/docs/user_manual/plugins/plugins_heatmap.html
+%http://en.wikipedia.org/wiki/Kernel_%28statistics%29#Kernel_functions_in_common_use
 
 \end{itemize}
 \end{frame}

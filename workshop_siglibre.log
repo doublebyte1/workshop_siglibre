@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.18)  21 MAR 2015 21:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.8.18)  22 MAR 2015 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -915,65 +915,90 @@ Dictionary: translator-theorem-dictionary, Language: English
 LaTeX Info: Redefining \includegraphics on input line 54.
 \c@lstlisting=\count168
  (./workshop_siglibre.nav)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 67.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 69.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 67.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 69.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 67.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 69.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 67.
+(Font)              <10.95> on input line 69.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 67.
+(Font)              <8> on input line 69.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 67.
-LaTeX Font Info:    Try loading font information for U+msa on input line 67.
+(Font)              <6> on input line 69.
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 67.
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 67.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 67.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 67.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 69.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 67.
+(Font)              <5> on input line 69.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 67.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 69.
+
+<raw_data.png, id=47, 572.89032pt x 442.56062pt>
+File: raw_data.png Graphic file (type png)
+ <use raw_data.png>
+Package pdftex.def Info: raw_data.png used on input line 69.
+(pdftex.def)             Requested size: 64.9675pt x 50.18768pt.
+
+<cover3.png, id=48, 666.23906pt x 418.71896pt>
+File: cover3.png Graphic file (type png)
+ <use cover3.png>
+Package pdftex.def Info: cover3.png used on input line 69.
+(pdftex.def)             Requested size: 79.85373pt x 50.18768pt.
+
+<cover2.png, id=49, 666.23906pt x 418.71896pt>
+File: cover2.png Graphic file (type png)
+ <use cover2.png>
+Package pdftex.def Info: cover2.png used on input line 69.
+(pdftex.def)             Requested size: 79.85373pt x 50.18768pt.
+
+<cover1.png, id=50, 666.23906pt x 444.79578pt>
+File: cover1.png Graphic file (type png)
+ <use cover1.png>
+Package pdftex.def Info: cover1.png used on input line 69.
+(pdftex.def)             Requested size: 75.16722pt x 50.18768pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] (./workshop_siglibre.toc) [2
+ <./raw_data.png> <./cover3.png> <./cover2.png> <./cover1.png>] (./workshop_sig
+libre.toc) [2
 
 ] [3
 
 ] [4
 
-]
-[5
+] [5
 
 ] [6
 
 ] [7
 
-] [8
+]
+[8
 
 ] [9
 
@@ -1000,10 +1025,10 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
 ] [20
 
 ]
-<love.jpg, id=299, 552.0625pt x 552.0625pt>
+<love.jpg, id=303, 552.0625pt x 552.0625pt>
 File: love.jpg Graphic file (type jpg)
  <use love.jpg>
-Package pdftex.def Info: love.jpg used on input line 151.
+Package pdftex.def Info: love.jpg used on input line 153.
 (pdftex.def)             Requested size: 153.64493pt x 153.6414pt.
  [21
 
@@ -1011,7 +1036,7 @@ Package pdftex.def Info: love.jpg used on input line 151.
 File: love.jpg Graphic file (type jpg)
 
 <use love.jpg>
-Package pdftex.def Info: love.jpg used on input line 151.
+Package pdftex.def Info: love.jpg used on input line 153.
 (pdftex.def)             Requested size: 153.64493pt x 153.6414pt.
  [22
 
@@ -1034,29 +1059,29 @@ Package pdftex.def Info: love.jpg used on input line 151.
 ] [31
 
 ]
-<json2.jpg, id=422, 120.45pt x 120.45pt>
+<json2.jpg, id=426, 120.45pt x 120.45pt>
 File: json2.jpg Graphic file (type jpg)
  <use json2.jpg>
-Package pdftex.def Info: json2.jpg used on input line 183.
+Package pdftex.def Info: json2.jpg used on input line 185.
 (pdftex.def)             Requested size: 76.82246pt x 76.8249pt.
 
-<json.png, id=423, 431.6125pt x 416.55624pt>
+<json.png, id=427, 431.6125pt x 416.55624pt>
 File: json.png Graphic file (type png)
  <use json.png>
-Package pdftex.def Info: json.png used on input line 183.
+Package pdftex.def Info: json.png used on input line 185.
 (pdftex.def)             Requested size: 153.64493pt x 148.2821pt.
  [32
 
- <./json2.jpg> <./json.png>] <mongo.png, id=436, 1505.625pt x 501.875pt>
+ <./json2.jpg> <./json.png>] <mongo.png, id=440, 1505.625pt x 501.875pt>
 File: mongo.png Graphic file (type png)
  <use mongo.png>
-Package pdftex.def Info: mongo.png used on input line 194.
+Package pdftex.def Info: mongo.png used on input line 196.
 (pdftex.def)             Requested size: 153.64493pt x 51.20894pt.
 
 [33
 
  <./mongo.png>]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 214
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 216
 .
  (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1073,10 +1098,10 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ] [39
 
-] <qgis.png, id=527, 943.525pt x 301.125pt>
+] <qgis.png, id=531, 943.525pt x 301.125pt>
 File: qgis.png Graphic file (type png)
  <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 244.
+Package pdftex.def Info: qgis.png used on input line 246.
 (pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
 
 [40
@@ -1084,21 +1109,21 @@ Package pdftex.def Info: qgis.png used on input line 244.
  <./qgis.png>]
 File: qgis.png Graphic file (type png)
  <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 244.
+Package pdftex.def Info: qgis.png used on input line 246.
 (pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
  [41
 
 ]
 File: qgis.png Graphic file (type png)
  <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 244.
+Package pdftex.def Info: qgis.png used on input line 246.
 (pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
  [42
 
 ]
 File: qgis.png Graphic file (type png)
  <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 244.
+Package pdftex.def Info: qgis.png used on input line 246.
 (pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
 
 [43
@@ -1106,37 +1131,37 @@ Package pdftex.def Info: qgis.png used on input line 244.
 ]
 File: qgis.png Graphic file (type png)
  <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 244.
+Package pdftex.def Info: qgis.png used on input line 246.
 (pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
  [44
 
-] <bug.png, id=584, 1028.34187pt x 551.81157pt>
+] <bug.png, id=588, 1028.34187pt x 551.81157pt>
 File: bug.png Graphic file (type png)
 
 <use bug.png>
-Package pdftex.def Info: bug.png used on input line 253.
+Package pdftex.def Info: bug.png used on input line 255.
 (pdftex.def)             Requested size: 307.28987pt x 164.89641pt.
  [45
 
  <./bug.png (PNG copy)>]
-<plugins.png, id=596, 685.05937pt x 367.3725pt>
+<plugins.png, id=600, 685.05937pt x 367.3725pt>
 File: plugins.png Graphic file (type png)
  <use plugins.png>
-Package pdftex.def Info: plugins.png used on input line 267.
+Package pdftex.def Info: plugins.png used on input line 269.
 (pdftex.def)             Requested size: 184.3758pt x 98.87236pt.
  [46
 
  <./plugins.png (PNG copy)>]
 File: plugins.png Graphic file (type png)
  <use plugins.png>
-Package pdftex.def Info: plugins.png used on input line 267.
+Package pdftex.def Info: plugins.png used on input line 269.
 (pdftex.def)             Requested size: 184.3758pt x 98.87236pt.
  [47
 
 ]
 File: plugins.png Graphic file (type png)
  <use plugins.png>
-Package pdftex.def Info: plugins.png used on input line 267.
+Package pdftex.def Info: plugins.png used on input line 269.
 (pdftex.def)             Requested size: 184.3758pt x 98.87236pt.
  [48
 
@@ -1144,18 +1169,18 @@ Package pdftex.def Info: plugins.png used on input line 267.
 File: plugins.png Graphic file (type png)
 
 <use plugins.png>
-Package pdftex.def Info: plugins.png used on input line 267.
+Package pdftex.def Info: plugins.png used on input line 269.
 (pdftex.def)             Requested size: 184.3758pt x 98.87236pt.
  [49
 
-] <mongodbplugin.png, id=642, 1028.34187pt x 551.81157pt>
+] <mongodbplugin.png, id=646, 1028.34187pt x 551.81157pt>
 File: mongodbplugin.png Graphic file (type png)
 
 <use mongodbplugin.png>
-Package pdftex.def Info: mongodbplugin.png used on input line 280.
+Package pdftex.def Info: mongodbplugin.png used on input line 282.
 (pdftex.def)             Requested size: 184.3758pt x 98.93448pt.
 
-Overfull \vbox (11.66046pt too high) detected at line 280
+Overfull \vbox (11.66046pt too high) detected at line 282
  []
 
 [50
@@ -1163,10 +1188,10 @@ Overfull \vbox (11.66046pt too high) detected at line 280
  <./mongodbplugin.png (PNG copy)>]
 File: mongodbplugin.png Graphic file (type png)
  <use mongodbplugin.png>
-Package pdftex.def Info: mongodbplugin.png used on input line 280.
+Package pdftex.def Info: mongodbplugin.png used on input line 282.
 (pdftex.def)             Requested size: 184.3758pt x 98.93448pt.
 
-Overfull \vbox (11.66046pt too high) detected at line 280
+Overfull \vbox (11.66046pt too high) detected at line 282
  []
 
 [51
@@ -1174,10 +1199,10 @@ Overfull \vbox (11.66046pt too high) detected at line 280
 ]
 File: mongodbplugin.png Graphic file (type png)
  <use mongodbplugin.png>
-Package pdftex.def Info: mongodbplugin.png used on input line 280.
+Package pdftex.def Info: mongodbplugin.png used on input line 282.
 (pdftex.def)             Requested size: 184.3758pt x 98.93448pt.
 
-Overfull \vbox (11.66046pt too high) detected at line 280
+Overfull \vbox (11.66046pt too high) detected at line 282
  []
 
 [52
@@ -1185,10 +1210,10 @@ Overfull \vbox (11.66046pt too high) detected at line 280
 ]
 File: mongodbplugin.png Graphic file (type png)
  <use mongodbplugin.png>
-Package pdftex.def Info: mongodbplugin.png used on input line 280.
+Package pdftex.def Info: mongodbplugin.png used on input line 282.
 (pdftex.def)             Requested size: 184.3758pt x 98.93448pt.
 
-Overfull \vbox (11.66046pt too high) detected at line 280
+Overfull \vbox (11.66046pt too high) detected at line 282
  []
 
 [53
@@ -1196,32 +1221,32 @@ Overfull \vbox (11.66046pt too high) detected at line 280
 ]
 File: mongodbplugin.png Graphic file (type png)
  <use mongodbplugin.png>
-Package pdftex.def Info: mongodbplugin.png used on input line 280.
+Package pdftex.def Info: mongodbplugin.png used on input line 282.
 (pdftex.def)             Requested size: 184.3758pt x 98.93448pt.
 
-Overfull \vbox (11.66046pt too high) detected at line 280
+Overfull \vbox (11.66046pt too high) detected at line 282
  []
 
 [54
 
 ]
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 300.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 302.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 300.
+(Font)              <10> on input line 302.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 300.
+(Font)              <7> on input line 302.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 300.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 302.
 
- <import.png, id=698, 755.82375pt x 315.42844pt>
+ <import.png, id=702, 755.82375pt x 315.42844pt>
 File: import.png Graphic file (type png)
  <use import.png>
-Package pdftex.def Info: import.png used on input line 300.
+Package pdftex.def Info: import.png used on input line 302.
 (pdftex.def)             Requested size: 122.91406pt x 51.2926pt.
 
-Overfull \vbox (7.58943pt too high) detected at line 300
+Overfull \vbox (7.58943pt too high) detected at line 302
  []
 
 [55
@@ -1229,21 +1254,21 @@ Overfull \vbox (7.58943pt too high) detected at line 300
  <./import.png>]
 File: import.png Graphic file (type png)
  <use import.png>
-Package pdftex.def Info: import.png used on input line 300.
+Package pdftex.def Info: import.png used on input line 302.
 (pdftex.def)             Requested size: 122.91406pt x 51.2926pt.
 
-Overfull \vbox (7.58943pt too high) detected at line 300
+Overfull \vbox (7.58943pt too high) detected at line 302
  []
 
 [56
 
-] <sel_tweets.png, id=725, 755.82375pt x 315.42844pt>
+] <sel_tweets.png, id=729, 755.82375pt x 315.42844pt>
 File: sel_tweets.png Graphic file (type png)
  <use sel_tweets.png>
-Package pdftex.def Info: sel_tweets.png used on input line 321.
+Package pdftex.def Info: sel_tweets.png used on input line 323.
 (pdftex.def)             Requested size: 184.3758pt x 76.94612pt.
 
-Overfull \vbox (15.89294pt too high) detected at line 321
+Overfull \vbox (15.89294pt too high) detected at line 323
  []
 
 [57
@@ -1251,53 +1276,50 @@ Overfull \vbox (15.89294pt too high) detected at line 321
  <./sel_tweets.png>]
 File: sel_tweets.png Graphic file (type png)
  <use sel_tweets.png>
-Package pdftex.def Info: sel_tweets.png used on input line 321.
+Package pdftex.def Info: sel_tweets.png used on input line 323.
 (pdftex.def)             Requested size: 184.3758pt x 76.94612pt.
 
-Overfull \vbox (15.89294pt too high) detected at line 321
+Overfull \vbox (15.89294pt too high) detected at line 323
  []
 
 [58
 
-]
-File: qgis.png Graphic file (type png)
- <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 338.
-(pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
+] <heatmap_crime.png, id=754, 464.4853pt x 364.36125pt>
+File: heatmap_crime.png Graphic file (type png)
+
+<use heatmap_crime.png>
+Package pdftex.def Info: heatmap_crime.png used on input line 342.
+(pdftex.def)             Requested size: 153.64493pt x 120.52869pt.
  [59
 
-]
-File: qgis.png Graphic file (type png)
- <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 338.
-(pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
- [60
+ <./heatmap_crime.png>]
+File: heatmap_crime.png Graphic file (type png)
+ <use heatmap_crime.png>
+Package pdftex.def Info: heatmap_crime.png used on input line 342.
+(pdftex.def)             Requested size: 153.64493pt x 120.52869pt.
+
+[60
 
 ]
-File: qgis.png Graphic file (type png)
- <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 338.
-(pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
+File: heatmap_crime.png Graphic file (type png)
+ <use heatmap_crime.png>
+Package pdftex.def Info: heatmap_crime.png used on input line 342.
+(pdftex.def)             Requested size: 153.64493pt x 120.52869pt.
  [61
 
 ]
-File: qgis.png Graphic file (type png)
-
-<use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 338.
-(pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
+File: heatmap_crime.png Graphic file (type png)
+ <use heatmap_crime.png>
+Package pdftex.def Info: heatmap_crime.png used on input line 342.
+(pdftex.def)             Requested size: 153.64493pt x 120.52869pt.
  [62
 
-]
-File: qgis.png Graphic file (type png)
- <use qgis.png>
-Package pdftex.def Info: qgis.png used on input line 338.
-(pdftex.def)             Requested size: 307.28987pt x 98.07123pt.
- [63
+] [63
 
 ] [64
 
-] [65
+]
+[65
 
 ] [66
 
@@ -1307,7 +1329,29 @@ Package pdftex.def Info: qgis.png used on input line 338.
 
 ] [69
 
-] [70
+] <heatmap1.png, id=878, 755.82375pt x 315.42844pt>
+File: heatmap1.png Graphic file (type png)
+
+<use heatmap1.png>
+Package pdftex.def Info: heatmap1.png used on input line 394.
+(pdftex.def)             Requested size: 307.28987pt x 128.23874pt.
+
+Overfull \vbox (13.76471pt too high) detected at line 394
+ []
+
+[70
+
+ <./heatmap1.png>] [71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
 
 ]
 \tf@nav=\write6
@@ -1319,21 +1363,20 @@ Package pdftex.def Info: qgis.png used on input line 338.
 \tf@snm=\write8
 \openout8 = `workshop_siglibre.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 406.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 406.
-
-(./workshop_siglibre.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 406.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 406.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 459.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 459.
+ (./workshop_siglibre.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 459.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 459.
 Package rerunfilecheck Info: File `workshop_siglibre.out' has not changed.
 (rerunfilecheck)             Checksum: 0FEBF9C3BBEE3352C21B686AAE6D9BD7;324.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 406.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 459.
  ) 
 Here is how much of TeX's memory you used:
- 17348 strings out of 495032
- 318923 string characters out of 6181718
+ 17395 strings out of 495032
+ 319550 string characters out of 6181718
  410004 words of memory out of 5000000
- 19974 multiletter control sequences out of 15000+600000
+ 20003 multiletter control sequences out of 15000+600000
  67327 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  49i,19n,60p,402b,728s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1346,9 +1389,9 @@ ss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmtt10.pfb>
-Output written on workshop_siglibre.pdf (70 pages, 2081326 bytes).
+Output written on workshop_siglibre.pdf (76 pages, 4894912 bytes).
 PDF statistics:
- 949 PDF objects out of 1000 (max. 8388607)
- 147 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1027 PDF objects out of 1200 (max. 8388607)
+ 159 named destinations out of 1000 (max. 500000)
+ 219 words of extra memory for PDF output out of 10000 (max. 10000000)
 
