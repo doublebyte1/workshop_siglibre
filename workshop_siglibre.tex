@@ -80,7 +80,7 @@
 \frametitle{What do we want to do?}
 
 \begin{itemize}
-  \item<1->Nowadays social media is a major source for information sharing.In some cases the user also shares some attributes, such as \textbf{geolocation}. By using this information as a proxy for human presence, and with the adequate methods, we are able to provide powerful representations of the distribution of social media users within the territory.
+  \item<1->Nowadays social media is a major source for information sharing. In some cases the user also shares some attributes, such as \textbf{geolocation}. By using this information as a proxy for human presence, and with the adequate methods, we are able to provide powerful representations of the distribution of social media users within the territory.
   \item<2->Due to its willingness in sharing data, Twitter has been a prime \textit{playground}, for researchers and practitioners around the world.
   \item<3->The objective of this workshop is to provide a workflow for enhancing the visualization of geolocated Tweets.
   \end{itemize}
@@ -101,12 +101,27 @@
 
 \begin{frame}
 \frametitle{Objective}
-
-%show image in the beginning and image in the end
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+      \begin{figure}  
+	\includegraphics[width=\textwidth]{tweets_cat.png}\\
+       \end{figure}    
+    \tiny{Before: Raw tweets}         
+  \end{column}
+  \begin{column}{0.5\textwidth}
+      \begin{figure}  
+	\includegraphics[width=\textwidth]{final.png}\\
+       \end{figure}  
+    \tiny{After: 3D visualization of the clusters of tweets}  
+  \end{column}  
+\end{columns}
 \end{frame}
 
 \begin{frame}
 \frametitle{Stack}
+
+\begin{columns}
+  \begin{column}{0.5\textwidth}
 \begin{itemize}
   \item MongoDB
   \item QGIS + Python Plugins
@@ -116,19 +131,31 @@
     \item<4-> Qgis2threejs    
   \end{itemize}    
 \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+      \begin{figure}  
+	\includegraphics[width=0.3\textwidth]{mongodb_logo.png}\\
+       \end{figure}  
+      \begin{figure}  
+	\includegraphics[width=0.3\textwidth]{qgis_logo.jpg}\\
+       \end{figure}         
+  \end{column}  
+\end{columns}
 
-%put images
+
+
 \end{frame}
 
 \begin{frame}
 \frametitle{Approach}
-This will be a hands-on workshop.
+This will be a hands-on workshop.\small{ 
 \begin{itemize}
-  \item<2-> I will introduce each one of the micro-tasks, and will do it while you watch.
-  \item<3-> Then I will provide help to everyone who needs it to complete the task.
-  \item<4-> \textbf{For the impatient:} If you don't want to wait for everyone to complete, you can attempt to complet the exercises on your own ;-) View the complete presentation here: %todo:link
-  \item<5-> \textbf{For the guru:} If you have finished everything and are bored, you may try to complete the tutorials or read the references, on the last page;-)
-\end{itemize}
+  \item<2-> People will partner up in small teams.
+  \item<3-> I will introduce each one of the micro-tasks, and I will do it while you watch.
+  \item<4-> Then I will provide help to everyone who needs it to complete the task.
+  \item<5-> \textbf{For the impatient:} If you don't want to wait for everyone to complete, you may attempt to complet the exercises on your own ;-) View the complete presentation here: \url{http://tinyurl.com/pltwtc2}
+  \item<6-> \textbf{For the guru:} If you have finished everything and are bored, you may want to read some of the links, on the last page, or help your colleagues to complete the tasks ;-)
+\end{itemize}}
 \end{frame}
 
 \section{Getting the Tweets Coordinates} 
@@ -140,7 +167,7 @@ This will be a hands-on workshop.
     \begin{itemize}
       \item<1->Users on Twitter generate over 400 million tweets everyday.
       \item<1->A proportion of these tweets is available to researchers and practitioners through public APIs, free of any charges.
-      \item<2->Approximately 1\% of all Tweets published on Twitter are geolocated.%Users can optionally choose to provide location information for the Tweets they publish. gps
+      \item<2->Approximately 1\% of all Tweets published on Twitter are geolocated.%Users can optionally choose to provide location information for the Tweets they publish. gps still 4 million everyday
       \end{itemize}  }
   \end{column}
   \begin{column}{0.5\textwidth}
@@ -271,7 +298,7 @@ QGIS is a Free and Open-Source GIS System:
 \begin{frame}
 \frametitle{Isn't there a Plugin to connect to MongoDB?}
 \begin{itemize}
-  \item<1->There was a plugin written in 2011.
+  \item<1->A plugin was written in 2011.
   \item<3->There seemed to be some issues with it, and sadly it hasn't be ported to the latest versions of QGIS.
   \item<4->The project appears to be now dead.
   \item<5->The community would really welcome a new attempt for a mongoDB connector on QGIS.  
@@ -286,13 +313,13 @@ QGIS is a Free and Open-Source GIS System:
 \begin{itemize}
   \item<1->Objective: Display the tweets coordinates in QGIS, with background map.
   \item<1->Tool: QGIS + OpenLayers plugin.
-  \item<1->Steps:  
+  \item<1->Steps: \small{  
   \begin{itemize}
     \item<2->Start QGIS and create a project.  
-    \item<2->Download and enable the \textit{OpenLayers} plugin (Plugins $->$ Manage and Install Plugins).
+    \item<2->Download and enable the \textit{OpenLayers} plugin (Plugins$\rightarrow$Manage and Install Plugins).
     \item<2->Choose a background map (e.g.: OSM, Bing Maps, etc).
-    \item<2->Import the json file, using the Text Layer Importer (Layer $->$ Add Layer $->$ Add Delimited Text Layer).    
-  \end{itemize}    
+    \item<2->Import the JSON file, using the Text Layer Importer (Layer$\rightarrow$Add Layer$\rightarrow$Add Delimited Text Layer).
+  \end{itemize}   }
 \end{itemize}  
 
   \begin{figure}  
@@ -307,7 +334,7 @@ QGIS is a Free and Open-Source GIS System:
   \item<1->Objective: Save the tweets from the region of Catalunya, in a Shapefile.
   \item<1->Steps:  
   \begin{itemize}
-    \item<2->Zoom into the desired location using the zoom tool (View $->$ Zoom in) .  
+    \item<2->Zoom into the desired location using the zoom tool (View$\rightarrow$Zoom in) .  
     \item<2->Select the visible points using the select tool.
     \item<2->Save the selected features in a Shapefile.
     \begin{itemize}
@@ -330,8 +357,8 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
 \begin{columns}
   \begin{column}{0.5\textwidth}
     \begin{itemize}
-	  \item<2->The "heat" in the term refers to the concentration of the geographic entity within any given spot.
-	  \item<3->Sometimes they are referred as hot spot mapping or clustering.
+	  \item<2->The \textit{heat} in the term refers to the concentration of the geographic entity within any given spot.
+	  \item<3->Sometimes they are referred as \textit{hot spot} mapping or \textit{clustering}.
 	  \item<4->They are great tools to detect spatial patterns.
     \end{itemize}
   \end{column}
@@ -365,15 +392,14 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
   \item<1->Steps:  
   \begin{itemize}
     \item<2->Ensure the heatmap plugin is enabled.  
-    \item<2->Create the heatmap using the plugin (Raster $->$ Heatmap).
+    \item<2->Create the heatmap using the plugin (Raster$\rightarrow$Heatmap).
     \item<2->Pay special attention to the following parameters:    
     \begin{itemize}
       \item<3->Radius: search radius in meters.
       \item<3->Rows and columns: cell size of the output raster.
-      \item<3->Rows and columns: cell size of the output raster.
       \item<3->Kernel shape: QGIS uses one of the following decay algorithms.      
     \end{itemize}        
-    \item<4->Costumize a color scheme, by right clicking the layer and choosing properties.
+    \item<4->Costumize the color scheme, by right clicking the layer and choosing properties.
   \end{itemize}    
 \end{itemize}  
 \end{frame}
@@ -384,7 +410,7 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
 
 \begin{itemize}  
     \item<1->Suggestion: try different combinations of parameters and different visualizations.    
-    \item<1->Tip: Use the identify tool to ensure the maximum is being picked up.
+    \item<1->Tip: Use the identify tool to ensure the maximum is being correctly picked up.
 \end{itemize}  
 
   \begin{figure}  
@@ -435,11 +461,11 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
   \item<1->Tool: QGIS.
   \item<1->Steps:  
   \begin{itemize}
-    \item<2->Use the identify tool to establish a treshold: from that value on, pixels will be considered part of an high-density cluster.  
-    \item<2->Use the raster calculator, to select pixels above that threshold (Raster $->$ Raster Calculator).
+    \item<2->Use the identify tool to establish a treshold; from that value on, pixels will be considered part of an high-density cluster.  
+    \item<2->Use the raster calculator, to select pixels above that threshold (Raster$\rightarrow$Raster Calculator).
     \item<2->Example of a select expression:$"heatmap@1">150$    
-    \item<3->The new map only contains binary values (1: above the threshold; 0: bellow the threshold).
-    \item<3->Tip:ensure the legend picks up correctly the values on the dataset.
+    \item<3->The new map \textbf{only} contains binary values (1: above the threshold; 0: bellow the threshold).
+    \item<3->Tip: ensure the legend picks up correctly the values on the dataset.
   \end{itemize}    
 \end{itemize}  
 \end{frame}
@@ -448,23 +474,47 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
 \frametitle{Hands-on (cont.)}
 %\begin{itemize}
   \begin{itemize}
-    \item<1->Vectorize this raster file (Raster $->$ Conversion $->$ Polygonize (Raster to Vector).  
-    \item<2->Check out the attribute table of the Shapefile: the polygons have a value of 0, or 1 (right click + Open attribute table).
+    \item<1->Vectorize this raster file (Raster$\rightarrow$Conversion$\rightarrow$Polygonize (Raster to Vector).  
+    \item<2->Check out the attribute table of the Shapefile: verify the polygons have a value of 0, or 1 (right click + Open attribute table).
     \item<3->If we filter out the polygons with value 0, we will have the areas with high density. 
       \begin{itemize}
 	\item<4->Select by expression: $"DN" = 1$. 
       \end{itemize}    
     \item<5->Save the selection as a new Shapefile.
-    \item<6->Enhancement: count the number of tweets inside each polygon (Vector $->$  Analysis Tools $->$ Count Points in Polygon).    
+    \item<6->Enhancement: count the number of tweets that fall within each polygon (Vector$\rightarrow$ Analysis Tools$\rightarrow$Count Points in Polygon).
+    \item<7->Display the number of tweets within each polygon (right-click the layer to call the properties, and select "Labels").        
   \end{itemize}    
 %\end{itemize}  
 \end{frame}
 
 \section{3D Viz} 
 \begin{frame}
-\frametitle{TODO}
-%TODO: 3djs OpenGL and the plugin
+\frametitle{Three.js}
+\begin{columns}
+  \begin{column}{0.5\textwidth}\tiny{ 
+  Lightweight cross-browser JavaScript library used to create and display animated 3D computer graphics on a Web browser.  
+  \begin{itemize}
+    \item<2->It relies on WebGL, a JavaScript API for rendering interactive 3D computer graphics and 2D graphics within any compatible web browser without the use of plug-ins.
+    \item<3->WebGL itself is based on OpenGL ES 2.0, a subset of the OpenGL, an API for rendering hardware-accelerated graphics using a graphics processing unit (GPU).%visual processor unit (VPU), is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display.
+\end{itemize}}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+      \begin{figure}  
+	\includegraphics[width=\textwidth]{threejs2.png}    
+      \end{figure}  
+  \end{column}  
+\end{columns}
+\end{frame}
 
+\begin{frame}
+\frametitle{Three.js in QGGIS}
+  \begin{itemize}
+    \item<1->The Qgis2threejs plugin exports terrain data, map canvas image and vector data to a webpage.
+    \item<2->The exported 3D objects can be viewed on any web browser which supports WebGL.%e.g.> chrome, firefox, ie, opera, ios
+  \end{itemize}
+    \begin{figure}  
+      \includegraphics[width=0.6\textwidth]{3js.jpg}    
+     \end{figure}  
 \end{frame}
 
 \begin{frame}
@@ -476,11 +526,11 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
   \begin{itemize}
     \item<2->Ensure that Qgis2threejs is installed and enabled.  
     \item<3->Prepare the scene you want to render (e.g.: visible layers, styles, etc).
-    \item<4->Run Qgis2threejs (Web $->$ Qgis2threejs $->$ Qgis2threejs)
+    \item<4->Run Qgis2threejs (Web$\rightarrow$Qgis2threejs$\rightarrow$Qgis2threejs)
     \item<5->Costumize the visualization. Some things to pay attention to:
       \begin{itemize}
 	\item<6->Enable the layers you want to extrude (in this case, the clusters).      
-	\item<6->The height value should be read fromthe count field (PNTCNT).	
+	\item<6->The height value should be read from the count field (PNTCNT).	
 	\item<6->You may want to exagerate the vertical scale by a factor.
 	\item<6->The output HTML file path defines where you will save the result webpage (and associated files).	
       \end{itemize}    
@@ -491,31 +541,33 @@ Heatmaps enhance the visualization of the density distribution of a phenomena (e
 
 %TODO: 3dviz intro, references + tutorials, fix _ character, fix images, review everything
 
+\begin{frame}
+\frametitle{Well Done!}
+    \begin{figure}  
+      \includegraphics[width=\textwidth]{final.png}    
+     \end{figure}  
+\end{frame}
+
 
 \begin{frame}
 \frametitle{References}
-\begin{itemize}
-\item Aji, A., Wang, F., Vo, H., Lee, R., Liu, Q., Zhang, X. and Saltz, J." Hadoop-GIS: A High Performance Spatial Data Warehousing System over MapReduce". Proceedings of the VLDB Endowment International Conference on Very Large Data Bases, 6(11), p1009. (2013)
-\item Cuesta, H. "Practical Data Analysis". Packt Publishing (2013)
-\item Dunning, T. and Friedman, E. "Time Series Databases: New Ways to Store and Access Data". O'Reilly Media; 1 edition (October, 2014)
-\item Myatt, G and Johnson, W. "Making Sense Of Data I: A Practical Guide to Exploratory Data Analysis and Data Mining". O'Reilly : 2 edition (2014).
-%http://tweettracker.fulton.asu.edu/tda/TwitterDataAnalytics.pdf
-%http://www2.qgis.org
-%QGIS plugin repository
-%http://geokoder.com/mongodb-plugin-for-quantum-gis
-%http://www.gislounge.com/heat-maps-in-gis/
-%https://alastaira.wordpress.com/2011/02/23/heat-mapping-crime-data-with-bing-maps-and-html5-canvas/
-%http://docs.qgis.org/2.0/en/docs/user_manual/plugins/plugins_heatmap.html
-%http://en.wikipedia.org/wiki/Kernel_%28statistics%29#Kernel_functions_in_common_use
-%http://en.wikipedia.org/wiki/Cluster_analysis
-%https://plugins.qgis.org/plugins/clusterpy_qgis_plugin/
-%http://www.rise-group.org/section/Software/clusterPy/
-
+\begin{itemize}\tiny{
+\item \url{http://tweettracker.fulton.asu.edu/tda/TwitterDataAnalytics.pdf}
+\item \url{http://www2.qgis.org}
+\item \url{http://plugins.qgis.org/plugins/}
+\item \url{http://geokoder.com/mongodb-plugin-for-quantum-gis}
+\item \url{http://www.gislounge.com/heat-maps-in-gis/}
+\item \url{https://alastaira.wordpress.com/2011/02/23/heat-mapping-crime-data-with-bing-maps-and-html5-canvas/}
+\item \url{http://docs.qgis.org/2.0/en/docs/user_manual/plugins/plugins_heatmap.html}
+\item \url{http://en.wikipedia.org/wiki/Kernel_\%28statistics\%29\#Kernel\_functions\_in\_common\_use}
+\item \url{http://en.wikipedia.org/wiki/Cluster_analysis}
+\item \url{https://plugins.qgis.org/plugins/clusterpy_qgis_plugin/}
+\item \url{http://www.rise-group.org/section/Software/clusterPy/}
+\item \url{http://threejs.org/}
+\item \url{http://anitagraser.com/2014/03/15/3d-viz-with-qgis-three-js/} }
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Tutorials}
-\end{frame}
+\
 
 \end{document}
